@@ -60,10 +60,13 @@ header p {
 a {
   padding: var(--space);
   border: var(--line);
-  max-width: fit-content;
+  align-items: center;
+  gap: .5rem;
+  display: inline-flex;
   text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
+   border-color: currentColor;;
+  border-radius: .5rem;
+  transition: transition: background-color .2s ease, border-color .2s ease, transform .1s ease;
 }
 
 a:hover {
@@ -88,11 +91,12 @@ main {
   gap: var(--space);
 }
 footer {
-  position: fixed;
-  bottom: 0;
   text-align: center;
-  border-top: 1px solid black;
-  width: 100%;
+  inset-inline: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgb(148, 228, 228);
+  
 }
 /* ====== Articles Grid Layout ====
 Setting the rules for how articles are placed in the main element.
