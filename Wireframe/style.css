@@ -57,22 +57,25 @@ header p {
   text-align: center;
 }
 
-a {
-  padding: var(--space);
-  border: var(--line);
-  align-items: center;
-  gap: .5rem;
-  display: inline-flex;
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #f7f7f7;
+  color: var(--ink);
+  font-weight: 700;
   text-decoration: none;
-   border-color: currentColor;;
-  border-radius: .5rem;
-  transition: transition: background-color .2s ease, border-color .2s ease, transform .1s ease;
+
 }
 
-a:hover {
-  background-color: color-mix(in oklab, var(--paper)90%, white);
-  transform: scale(1.02);
+.btn:focus, .btn:hover-visible {
+  outline: none;
+  transform: translayeY(-1px);
+  box-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
+.btn:active { transform: translateY(0); box-shadow: none; }
+
 
 img,
 svg {
