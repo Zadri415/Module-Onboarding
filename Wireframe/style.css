@@ -133,6 +133,11 @@ article {
     grid-column: 2/3;
   }
 
+ article > a {
+  grid-column: auto;
+  width: fit-content;
+ }
+
   > img {
     grid-column: span 3;
   
