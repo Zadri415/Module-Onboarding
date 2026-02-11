@@ -17,7 +17,7 @@
         <!-- Customer's name -->
         <div>
           <label for="name">Full Name:</label><br>
-          <input type="text" id="name" name="name" required minlength="2" autocomplete="name"><br>
+          <input type="text" id="name" name="name" pattern=".*\S.*" title="Name can not contain only spaces" required><br>
         </div>
 
         <!-- Email -->
