@@ -69,9 +69,11 @@ header p {
 
 }
 
-.btn:focus, .btn:hover-visible {
+.btn:focus, 
+.btn:hover,
+.btn:focus-visible {
   outline: none;
-  transform: translayeY(-1px);
+  transform: translateY(-1px);
   box-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
 .btn:active { transform: translateY(0); box-shadow: none; }
