@@ -41,7 +41,7 @@ header {
   margin: var(--space) auto;
   padding: var(--space);
   text-align: center;
-  border-bottom: var(--line);
+  
 }
 
 header h1 {
