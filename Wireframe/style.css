@@ -33,6 +33,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font: var(--font);
+  margin: 0;
+  padding-bottom: 100px;
 
 }
 
@@ -60,7 +62,7 @@ header p {
 .btn {
   display: inline-block;
   padding: 8px 14px;
-  border: 2px solid var(--line);
+  border: 2px solid var(--link);
   border-radius: 8px;
   background: #f7f7f7;
   color: var(--ink);
@@ -74,9 +76,13 @@ header p {
 .btn:focus-visible {
   outline: none;
   transform: translateY(-1px);
-  box-shadow: 0 1px 0 rgba(0,0,0,.15);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
 }
-.btn:active { transform: translateY(0); box-shadow: none; }
+
+.btn:active { 
+ transform: translateY(0); box-shadow: none; 
+ transition: all 0.2s ease;        
+}
 
 
 img,
@@ -101,7 +107,9 @@ footer {
   bottom: 0;
   position: fixed;
   background-color: rgb(148, 228, 228);
-  
+  padding: var(--space);
+  width: 100%;
+  box-sizing: border-box;
 }
 /* ====== Articles Grid Layout ====
 Setting the rules for how articles are placed in the main element.
@@ -110,14 +118,10 @@ Play with the options that come up.
 https://developer.chrome.com/docs/devtools/css/grid
 https://gridbyexample.com/learn/
 */
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space);
-  > *:first-child {
-    grid-column: span 2;
+main > article: first-child {
+  grid-column: span 2;
   }
-}
+
 /* ====== Article Layout ====== 
 Setting the rules for how elements are placed in the article. 
 Now laying out just the INSIDE of the repeated card/article design.
@@ -125,23 +129,18 @@ Keeping things orderly and separate is the key to good, simple CSS.
 */
 article {
   border: var(--line);
-  padding-bottom: var(--space);
+  padding: var(--space);
   text-align: left;
   display: grid;
-  grid-template-columns: var(--space) 1fr var(--space);
-  > * {
-    grid-column: 2/3;
+  grid-template-columns: 1fr;
+  gap: var(--space);
   }
 
- article > a {
-  grid-column: auto;
-  width: fit-content;
+ article img {
+   grid-column: 1 / -1;
+   margin: calc(var(--space) * -1) calc(var(--space) * -1) 0 calc(var(--space) * -1);
  }
 
-  > img {
-    grid-column: span 3;
-  
-  }
-
-  
+article.btn {
+  width: fit-content;
 }
